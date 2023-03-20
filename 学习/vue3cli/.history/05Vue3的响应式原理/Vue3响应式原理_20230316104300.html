@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 源数据
+      let person = {
+        name: "张三",
+        age: 18,
+      };
+      //   模拟vue2的响应式
+      //#region
+      //   let p = {};
+      //   缺少添加和删除delect
+      //   Object.defineProperty(p, "name", {
+      //     get() {
+      //       //有人读取name时
+      //       return person.name;
+      //     },
+      //     set(value) {
+      //       //有人修改name时
+      //       console.log("修改了");
+      //       person.name = value;
+      //     },
+      //   });
+      //   Object.defineProperty(p, "age", {
+      //     get() {
+      //       //有人读取name时
+      //       return person.age;
+      //     },
+      //     set(value) {
+      //       //有人修改name时
+      //       console.log("修改了");
+      //       person.name = age;
+      //     },
+      // });
+      //#endregion
+      //   模拟vue3的响应式 代理proxy 反射reflect
+      const p = new Proxy(person, {
+        // 读
+        get(target, propName) {
+          console.log("读取p的属性", target, propName);
+          return Reflect.get(target[propName]);
+        },
+        // 增和改
+        set(target, propName, value) {
+          console.log("更改了p的属性", target, propName, value);
+          target[propName] = value;
+          Reflect.set(target, propName, value);
+        },
+        // 删除
+        deleteProperty(target, propName) {
+          console.log("删除了p的属性", target, propName, value);
+          return Reflect.deleteProperty(target, propName);
+        },
+      });
+    </script>
+  </body>
+</html>

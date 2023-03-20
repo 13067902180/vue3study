@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 源数据
+      let person = {
+        name: "张三",
+        age: 18,
+      };
+      //   模拟vue2的响应式
+      //#region
+      //   let p = {};
+      //   缺少添加和删除delect
+      //   Object.defineProperty(p, "name", {
+      //     get() {
+      //       //有人读取name时
+      //       return person.name;
+      //     },
+      //     set(value) {
+      //       //有人修改name时
+      //       console.log("修改了");
+      //       person.name = value;
+      //     },
+      //   });
+      //   Object.defineProperty(p, "age", {
+      //     get() {
+      //       //有人读取name时
+      //       return person.age;
+      //     },
+      //     set(value) {
+      //       //有人修改name时
+      //       console.log("修改了");
+      //       person.name = age;
+      //     },
+      // });
+      //#endregion
+      //   模拟vue3的响应式
+      const p = new Proxy();
+    </script>
+  </body>
+</html>
