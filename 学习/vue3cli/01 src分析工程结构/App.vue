@@ -1,3 +1,11 @@
+<!--
+ * @Author: zzy 750188401@qq.com
+ * @Date: 2023-10-11 10:59:56
+ * @LastEditors: zzy 750188401@qq.com
+ * @LastEditTime: 2023-10-11 11:11:17
+ * @FilePath: \git测试\vue3study\学习\vue3cli\01 src分析工程结构\App.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <!-- vue3可以没有根标签 -->
   <router-link to="/">Home</router-link> |
@@ -17,6 +25,8 @@
 
 nav {
   padding: 30px;
+  margin: 50px;
+  left: 20px;
 
   a {
     font-weight: bold;
